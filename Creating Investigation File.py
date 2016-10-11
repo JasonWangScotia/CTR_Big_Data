@@ -48,5 +48,5 @@ for (dirpath, dirnames, filenames) in os.walk(in_folder):
                 if str(df_in_file.at[row,col])[:4] == 'Err_':
                     row_input = ','.join([filename, str(col), str(row), str(df_in_file.at[row,col]) + '\n'])
                     f_out.write(row_input)
-                 
+           
 f_out.close()
