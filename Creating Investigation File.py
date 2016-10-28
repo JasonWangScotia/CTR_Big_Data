@@ -9,7 +9,7 @@ import pandas as pd, os
 import os
 
 
-in_folder = 'C:/Users/ywang8/Documents/Side Project/For Matt/riskwatch/'
+in_folder = 'C:/Users/ywang8/Documents/Side Project/For Matt/outfiles/riskwatch/'
 in_file =  'SYNCOVA_SBL_Exposure_D_20160916_30_RiskWatch.csv'
 
 out_folder = 'C:/Users/ywang8/Documents/Side Project/For Matt/results/'
