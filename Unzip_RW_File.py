@@ -8,7 +8,7 @@ from zipfile import ZipFile
 import os,re
 
 in_folder = 'C:/Users/ywang8/Documents/Side Project/For Matt/Downloads/'
-out_folder = 'C:/Users/ywang8/Documents/Side Project/For Matt'
+out_folder = 'C:/Users/ywang8/Documents/Side Project/For Matt/'
 
 try:
     os.stat(out_folder[:-1])
