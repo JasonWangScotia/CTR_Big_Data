@@ -8,17 +8,19 @@ import pandas as pd, os, re
 
 import os
 
+#Acquire desired date
+date_folder = 'C:/Users/ywang8/Documents/Side Project/For Matt/'
+date_filename = 'Date.txt'
+f = open(date_folder + date_filename,'r')
+date = f.readline().strip()
 
-in_folder = 'C:/Users/ywang8/Documents/Side Project/For Matt/outfiles/riskwatch/'
-in_file =  'SYNCOVA_SBL_Exposure_D_20160916_30_RiskWatch.csv'
 
-out_folder = 'C:/Users/ywang8/Documents/Side Project/For Matt/results/'
+in_folder = 'C:/Users/ywang8/Documents/Side Project/For Matt/' + date + '/' + 'outfiles/riskwatch/'
 
-out_file = 'Investigation_Result.csv'
+out_folder = 'C:/Users/ywang8/Documents/Side Project/For Matt/' + date + ' Results/'
 
-summary = 'Summary.csv'
+out_file = 'Investigation_Result' + ' ' + date + '.csv'
 
-final_report = 'Investigation_Summary'
 
 #filter out the files with bug
 file_to_skip = []

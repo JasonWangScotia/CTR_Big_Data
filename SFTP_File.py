@@ -13,6 +13,14 @@ t1 = time.time()
 pass_folder = 'C:/Users/ywang8/Documents/Side Project/For Matt/'
 pass_filename = 'rw_unix.txt'
 
+
+#Acquire desired date
+date_folder = 'C:/Users/ywang8/Documents/Side Project/For Matt/'
+date_filename = 'Date.txt'
+f = open(date_folder + date_filename,'r')
+date = f.readline().strip()
+
+
 #get password for server
 f = open(pass_folder + pass_filename,'r')
 this_host = f.readline().strip()
@@ -49,7 +57,7 @@ for this_map in server_path_list:
     serverfile_list = sftp.listdir(path=this_server)
     for serverfile in serverfile_list:
 #Find the file start with ctrdata-data_out on Oct-24-16
-        match = re.search('ctrdata-data_out-24-OCT-16',serverfile)
+        match = re.search('ctrdata-data_out-' + date,serverfile)
         if match:
             sftp.get(this_server + str(serverfile), out_folder + this_local + '/' + str(serverfile))
             

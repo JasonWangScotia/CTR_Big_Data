@@ -8,11 +8,17 @@ import pandas as pd, os
 
 import os
 
-out_folder = 'C:/Users/ywang8/Documents/Side Project/For Matt/results/'
+#Acquire desired date
+date_folder = 'C:/Users/ywang8/Documents/Side Project/For Matt/'
+date_filename = 'Date.txt'
+f = open(date_folder + date_filename,'r')
+date = f.readline().strip()
 
-summary = 'Summary.csv'
+out_folder = 'C:/Users/ywang8/Documents/Side Project/For Matt/' + date + ' Results/'
 
-df_out_file = pd.DataFrame.from_csv('C:/Users/ywang8/Documents/Side Project/For Matt/results/Investigation_Result.csv', index_col=False)
+summary = 'Summary' + ' ' + date + '.csv'
+
+df_out_file = pd.DataFrame.from_csv(out_folder + 'Investigation_Result' + ' ' + date + '.csv', index_col=False)
 
 
 df_groupby = df_out_file.groupby(['filename','col','error'])['error'].count()
