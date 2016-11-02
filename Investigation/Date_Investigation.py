@@ -46,12 +46,13 @@ for (dirpath, dirnames, filenames) in os.walk(in_folder):
     row_input = []
     for filename in [f for f in filenames if f[-4:] =='.csv' and f not in file_to_skip]:
         file_path = in_folder + filename 
-        print(filename)
+        #print(filename)
         df_in_file = pd.read_csv(file_path,low_memory=False)
         for col in df_in_file.columns:
             for row in df_in_file.index:
-                match = re.search(r'^(?=(.*?[0-9]{2}-[A-Z]{3}-[0-9]{2}))\1(.*)$',str(df_in_file.at[row,col]))
+                match = re.search(r'^(?=(.*?[0-9]{1,2}-[A-Z a-z]{3}-[0-9]{2}))\1(.*)$',str(df_in_file.at[row,col]))
                 if match:
                     row_input = ','.join([filename, str(col), str(row), str(df_in_file.at[row,col]) + '\n'])
                     f_out.write(row_input)
 f_out.close()        
+#print("--- %s seconds ---" % (time.time() - start_time))
